@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--https://gist.github.com/whitingx/3840905--> 
+    <!-- This is an SEO Change -->
+    <meta name='pagename' content='Index'>
+
+    <!--https://www.w3schools.com/tags/tag_meta.asp--> 
+    <!-- This is an SEO Change -->
+    <meta name="description" content="Test Website Centered Around Non-existent Personal Budget Application">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="author" content="Tafari Lanclos">
+    
+    <!--https://ogp.me/-->
+    <!-- This is an SEO Change -->
+    <meta property="og:title" content="My Budget" />
+    <meta property="og:url" content="http://11.187.46.254:8080" />
+
+    
+
+    <base href="/">
+    <link rel="stylesheet"  type="text/css" href="/main.css">
+    <link rel="stylesheet"  type="text/css" href="/reset.css">
+    <title>My Budget</title>
+
+    <!-- https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock -->
+    <script>
+        function startTime() {
+          var today = new Date();
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt').innerHTML =
+          h + ":" + m + ":" + s;
+          var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+        </script>
+
+</head>
+<body onload="startTime()">
+    
+    <nav>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/login.html">Login</a></li>
+            
+            <!-- This is a Semantic HTML Change -->
+            <li><a href="/signup.html">Sign Up</a></li>
+            <li><a href="/barchart.html">Bar Chart</a></li>
+            <li><a href="/splineArea.html">Comparison Chart</a></li>
+            <li><a href="/doughnutchart.html">Doughnut Chart</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>My Doughnut Chart</h1>
+        <h2>A personal-budget management app</h2>
+        <h3 id="txt"></h3>
+
+        <!--Image by <a href="https://pixabay.com/users/Clker-Free-Vector-Images-3736/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=308936">Clker-Free-Vector-Images</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=308936">Pixabay</a>-->
+        <!-- This is an A11y Change -->
+        <img src="/homeicon.png" alt="Home Menu Icon" style="width:128px;height:128px;">
+    
+    </header>
+
+    <main class="center">
+        
+        <div class="_inline-block">
+            <article>
+                <h1>Update Chart</h1>
+                <form>
+                  <fieldset>
+                    <legend>Change Values</legend>
+                    <p>
+                      <label>Eat Out</label>
+                      <input type = "number"
+                             id = "number1"
+                             value = "50" />
+                    </p>
+                    <p>
+                        <label>Grocery</label>
+                        <input type = "number"
+                               id = "number1"
+                               value = "45" />
+                      </p>
+                      <p>
+                        <label>Rent</label>
+                        <input type = "number"
+                               id = "number1"
+                               value = "200" />
+                      </p>
+                      <p>
+                        <label>Gas</label>
+                        <input type = "number"
+                               id = "number1"
+                               value = "30" />
+                      </p>
+                      <p>
+                        <label>Monthly Savings Investment</label>
+                        <input type = "number"
+                               id = "number1"
+                               value = "30" />
+                      </p>
+                      <p>
+                        <label>Monthly Investment</label>
+                        <input type = "number"
+                               id = "number1"
+                               value = "30" />
+                      </p>
+                      <p>
+                        <label>Monthly Student Loans</label>
+                        <input type = "number"
+                               id = "number1"
+                               value = "100" />
+                      </p>
+                  </fieldset>
+                </form>
+            </article>
+
+           
+            <article>
+                <h1>Bar Chart </h1>
+                <p>
+                    <head>
+                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                        <script type="text/javascript">
+                        
+                        window.onload = function () {
+                            var chart = new CanvasJS.Chart("chartContainer", {
+                                title:{
+                                    text: "Doughnut Chart"              
+                                },
+                                data: [              
+                                {
+                                    // Change type to "doughnut", "line", "splineArea", etc.
+                                    type: "doughnut",
+                                    dataPoints: [
+                                        { label: "Eat out",  y: 50  },
+                                        { label: "Grocery", y: 45  },
+                                        { label: "Rent", y: 200  },
+                                        { label: "Gas",  y: 30  },
+                                        { label: "Monthly Savings Investment",  y: 30  },
+                                        { label: "Monthly Investment",  y: 30  },
+                                        { label: "Monthly Student Loans",  y: 100  }
+                                    ]
+                                }
+                                ]
+                            });
+                            chart.render();
+                        }
+                        </script>
+                        </head>
+                        <body>
+                        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                        </body>
+                </p>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="center">
+            All rights reserved &copy;
+        </div>
+    </footer>
+
+
+</body>
+</html>
