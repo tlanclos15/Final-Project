@@ -73,13 +73,16 @@ stroke-width: 2px;
 fill: none;
 }
 
-nav ul,
+nav ul{
+  position: relative;
+  text-align: center;
+}
 nav ul li {
   margin: 0;
   padding: 0;
   list-style: none;
   display: inline-block;
-  position: center;
+
 }
 
 nav ul li a {
@@ -91,7 +94,7 @@ nav ul li a {
   color: #fff;
   margin: 0;
   background-color: rgb(45, 53, 175);
-  position: center;
+
 }
 
 nav ul li a:hover {
