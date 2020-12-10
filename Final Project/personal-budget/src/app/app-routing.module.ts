@@ -9,6 +9,8 @@ import { DoughnutGraphComponent } from './doughnut-graph/doughnut-graph.componen
 import { ComparisonGraphComponent } from './comparison-graph/comparison-graph.component';
 import { P404Component } from './p404/p404.component';
 
+import { OktaCallbackComponent } from '@okta/okta-angular';
+
 const routes: Routes = [
   {
     path: '',
@@ -38,6 +40,10 @@ const routes: Routes = [
   {
     path: 'comparison-graph',
     component: ComparisonGraphComponent
+  },
+  {
+    path: 'implicit/callback',
+    component: OktaCallbackComponent
   },
   {
     path: '**',

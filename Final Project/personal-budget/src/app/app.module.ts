@@ -6,6 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { OktaAuthModule } from '@okta/okta-angular';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -24,6 +26,13 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+const config = {
+  issuer: 'https://dev-7491470.okta.com/',
+  redirectUri: window.location.origin + '/implicit/callback',
+  clientId: '0oa25njsdyRjXssWM5d6'
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +56,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     ChartsModule,
-    FormsModule
+    FormsModule,
+    OktaAuthModule.initAuth(config)
   ],
   providers: [],
   bootstrap: [AppComponent]
